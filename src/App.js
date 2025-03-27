@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useContext } from "react";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes";
+import { AuthProvider, AuthContext } from "./context/AuthContext";
+import { setAuthToken } from "./api/api";
+import ErrorBoundary from "./components/ErrorBoundary";
+
+function AppInitializer() {
+  const { token } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (token) {
+      setAuthToken(token);
+    }
+  }, [token]);
+
+  return <AppRoutes />;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter basename="/BACTrack_frontend">
+      <AuthProvider>
+        <ErrorBoundary>
+          <AppInitializer />
+        </ErrorBoundary>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
