@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/BACTrack_frontend/static/css/main.d221dc40.css",
-    "main.js": "/BACTrack_frontend/static/js/main.73f98617.js",
+    "main.js": "/BACTrack_frontend/static/js/main.217b374c.js",
     "index.html": "/BACTrack_frontend/index.html",
     "main.d221dc40.css.map": "/BACTrack_frontend/static/css/main.d221dc40.css.map",
-    "main.73f98617.js.map": "/BACTrack_frontend/static/js/main.73f98617.js.map"
+    "main.217b374c.js.map": "/BACTrack_frontend/static/js/main.217b374c.js.map"
   },
   "entrypoints": [
     "static/css/main.d221dc40.css",
-    "static/js/main.73f98617.js"
+    "static/js/main.217b374c.js"
   ]
 }
